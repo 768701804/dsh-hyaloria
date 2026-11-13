@@ -1,0 +1,43 @@
+{
+  "name": "dsh-hyaloria",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "在 DSH 里接入 Hyaloria（api.hyaloria.cn，New-API 形状的聚合网关）：一条模型路由 + 一个设置页（引擎类型 / 快速预设 / Base URL / Model / API Key / 测试连接 / 获取模型）。",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "llm",
+    "hyaloria",
+    "new-api",
+    "openai-compatible"
+  ],
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "react": "^18.3.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "license": "MIT"
+}
